@@ -1,0 +1,20 @@
+plugins {
+    id "io.franzbecker.gradle-lombok" version "2.2"
+}
+
+group 'tech.aomi.common'
+version '1.0.0'
+
+apply from: 'https://onegit.com/enterprise/public/raw/master/libraries.gradle'
+apply from: 'https://onegit.com/enterprise/public/raw/master/java.gradle'
+apply from: 'https://onegit.com/enterprise/public/raw/master/publishing-with-source.gradle'
+
+
+repositories {
+    maven { url "${project.'repo'}" }
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly lib.spring_data_mongodb
+}
