@@ -11,21 +11,21 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class Review implements java.io.Serializable {
+public class Review<T> implements java.io.Serializable {
 
     private static final long serialVersionUID = -4057791930223229701L;
 
     private String id;
 
-//    /**
-//     * 修改之前的数据
-//     */
-//    private Object before;
-//
-//    /**
-//     * 修改之后的数据
-//     */
-//    private Object after;
+    /**
+     * 修改之前的数据
+     */
+    private T before;
+
+    /**
+     * 修改之后的数据
+     */
+    private T after;
 
     /**
      * 使用的审核信息
