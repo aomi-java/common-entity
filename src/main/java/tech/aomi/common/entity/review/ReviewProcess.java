@@ -31,5 +31,5 @@ public class ReviewProcess implements java.io.Serializable {
     /**
      * 审核链
      */
-    private List<ReviewUser> chain;
+    private List<ReviewStep> chain;
 }

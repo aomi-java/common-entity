@@ -2,39 +2,42 @@ package tech.aomi.common.entity.review;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 审核用户信息
  *
- * @author 田尘殇Sean Create At 2018/10/15 10:05
+ * @author Sean createAt 2021/6/30
  */
 @Getter
 @Setter
-@ToString
 public class ReviewUser implements java.io.Serializable {
 
-    private static final long serialVersionUID = 3704685294171136708L;
-
-    /**
-     * 审核的角色ID
-     * 指定那个角色可以审核
-     */
-    private String roleId;
-
-    private String roleName;
+    private static final long serialVersionUID = -2591098275733823638L;
 
     /**
      * 审核用户ID
-     * 指定特定的用户来审核,优先级大于角色
      */
-    private String userId;
-
-    private String userName;
+    private String id;
 
     /**
-     * 审核说明
+     * 审核用户代码
      */
-    private String describe;
+    private String code;
+
+    /**
+     * 审核用户名称
+     */
+    private String name;
+
+    private Set<ReviewRole> roles;
+
+    /**
+     * 注释
+     * 用户满足用户记录其他信息
+     */
+    private Map<String, Object> annotations;
 
 }

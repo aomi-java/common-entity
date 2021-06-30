@@ -17,7 +17,7 @@ public class ReviewHistory implements java.io.Serializable {
     /**
      * 审核用户
      */
-    private Object user;
+    private ReviewUser user;
 
     /**
      * 审核结果
