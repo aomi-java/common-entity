@@ -1,8 +1,9 @@
 package tech.aomi.common.entity.user;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -11,7 +12,8 @@ import java.util.Date;
  *
  * @author 田尘殇Sean(sean.snow @ live.com) createAt 2018/7/13
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Identity implements java.io.Serializable {
@@ -29,6 +31,15 @@ public class Identity implements java.io.Serializable {
     private String number;
 
     /**
+     * hash值
+     */
+    private String numberHash;
+
+    /**
+     * 脱敏值
+     */
+    private String numberMask;
+    /**
      * 生效日期
      */
     private Date effectiveAt;
@@ -40,6 +51,7 @@ public class Identity implements java.io.Serializable {
     private Date expireAt;
 
     public Identity(Type type, String number) {
-        this(type, number, null, null);
+        this.type = type;
+        this.number = number;
     }
 }
