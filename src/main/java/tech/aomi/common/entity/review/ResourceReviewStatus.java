@@ -71,4 +71,19 @@ public enum ResourceReviewStatus {
             EDIT_WAIT_REVIEW,
             EDIT_REVIEWING
     );
+
+    /**
+     * 获取当前审核中状态对应的审核结果状态
+     *
+     * @param status 当前状态
+     * @param result 审核结果
+     */
+    public static ResourceReviewStatus getResultStatus(ResourceReviewStatus status, ReviewResult result) {
+        if (ADD_REVIEW_STATUS.contains(status)) {
+            return result == ReviewResult.RESOLVE ? ResourceReviewStatus.ADD_RESOLVE : ResourceReviewStatus.ADD_REJECTED;
+        } else if (EDIT_REVIEW_STATUS.contains(status)) {
+            return result == ReviewResult.RESOLVE ? ResourceReviewStatus.EDIT_RESOLVE : ResourceReviewStatus.EDIT_REJECTED;
+        }
+        return status;
+    }
 }
