@@ -80,10 +80,26 @@ public enum ResourceReviewStatus {
      */
     public static ResourceReviewStatus getResultStatus(ResourceReviewStatus status, ReviewResult result) {
         if (ADD_REVIEW_STATUS.contains(status)) {
-            return result == ReviewResult.RESOLVE ? ResourceReviewStatus.ADD_RESOLVE : ResourceReviewStatus.ADD_REJECTED;
+            return result == ReviewResult.RESOLVE ? ADD_RESOLVE : ADD_REJECTED;
         } else if (EDIT_REVIEW_STATUS.contains(status)) {
-            return result == ReviewResult.RESOLVE ? ResourceReviewStatus.EDIT_RESOLVE : ResourceReviewStatus.EDIT_REJECTED;
+            return result == ReviewResult.RESOLVE ? EDIT_RESOLVE : EDIT_REJECTED;
         }
         return status;
     }
+
+    /**
+     * 获取审核中状态
+     *
+     * @param status 当前状态
+     * @return 审核中状态
+     */
+    public static ResourceReviewStatus getReviewStatus(ResourceReviewStatus status) {
+        if (status == ADD_WAIT_REVIEW) {
+            return ADD_REVIEWING;
+        } else if (status == EDIT_WAIT_REVIEW) {
+            return EDIT_REVIEWING;
+        }
+        return status;
+    }
+
 }
