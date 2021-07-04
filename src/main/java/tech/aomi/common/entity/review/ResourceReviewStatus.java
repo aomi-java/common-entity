@@ -1,5 +1,8 @@
 package tech.aomi.common.entity.review;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 资源审核状态
  *
@@ -41,5 +44,31 @@ public enum ResourceReviewStatus {
     /**
      * 审核拒绝
      */
-    EDIT_REJECTED
+    EDIT_REJECTED;
+
+    /**
+     * 新增审核中状态
+     */
+    public static final List<ResourceReviewStatus> ADD_REVIEW_STATUS = Arrays.asList(
+            ADD_WAIT_REVIEW,
+            ADD_REVIEWING
+    );
+
+    /**
+     * 编辑审核中状态
+     */
+    public static final List<ResourceReviewStatus> EDIT_REVIEW_STATUS = Arrays.asList(
+            EDIT_WAIT_REVIEW,
+            EDIT_REVIEWING
+    );
+
+    /**
+     * 审核中状态
+     */
+    public static final List<ResourceReviewStatus> IN_REVIEW_STATUS = Arrays.asList(
+            ADD_WAIT_REVIEW,
+            ADD_REVIEWING,
+            EDIT_WAIT_REVIEW,
+            EDIT_REVIEWING
+    );
 }
