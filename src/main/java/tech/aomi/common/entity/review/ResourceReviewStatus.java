@@ -10,6 +10,22 @@ public enum ResourceReviewStatus {
      * 新增待审核
      */
     ADD_WAIT_REVIEW,
+
+    /**
+     * 新增审核中
+     */
+    ADD_REVIEWING,
+
+    /**
+     * 新增通过
+     */
+    ADD_RESOLVE,
+
+    /**
+     * 新增拒绝
+     */
+    ADD_REJECTED,
+
     /**
      * 编辑待审核
      */
@@ -17,13 +33,13 @@ public enum ResourceReviewStatus {
     /**
      * 审核中
      */
-    REVIEWING,
+    EDIT_REVIEWING,
     /**
      * 审核通过
      */
-    REVIEW_RESOLVE,
+    EDIT_RESOLVE,
     /**
      * 审核拒绝
      */
-    REVIEW_REJECTED
+    EDIT_REJECTED
 }
