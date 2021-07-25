@@ -44,7 +44,12 @@ public enum ResourceReviewStatus {
     /**
      * 审核拒绝
      */
-    EDIT_REJECTED;
+    EDIT_REJECTED,
+
+    DEL_WAIT_REVIEW,
+    DEL_REVIEWING,
+    DEL_RESOLVE,
+    DEL_REJECTED;
 
     /**
      * 新增审核中状态
@@ -62,6 +67,11 @@ public enum ResourceReviewStatus {
             EDIT_REVIEWING
     );
 
+    public static final List<ResourceReviewStatus> DEL_REVIEW_STATUS = Arrays.asList(
+            DEL_WAIT_REVIEW,
+            DEL_REVIEWING
+    );
+
     /**
      * 审核中状态
      */
@@ -69,7 +79,10 @@ public enum ResourceReviewStatus {
             ADD_WAIT_REVIEW,
             ADD_REVIEWING,
             EDIT_WAIT_REVIEW,
-            EDIT_REVIEWING
+            EDIT_REVIEWING,
+
+            DEL_WAIT_REVIEW,
+            DEL_REVIEWING
     );
 
     /**
@@ -83,6 +96,8 @@ public enum ResourceReviewStatus {
             return result == ReviewResult.RESOLVE ? ADD_RESOLVE : ADD_REJECTED;
         } else if (EDIT_REVIEW_STATUS.contains(status)) {
             return result == ReviewResult.RESOLVE ? EDIT_RESOLVE : EDIT_REJECTED;
+        } else if (DEL_REVIEW_STATUS.contains(status)) {
+            return result == ReviewResult.RESOLVE ? DEL_RESOLVE : DEL_REJECTED;
         }
         return status;
     }
@@ -98,6 +113,8 @@ public enum ResourceReviewStatus {
             return ADD_REVIEWING;
         } else if (status == EDIT_WAIT_REVIEW) {
             return EDIT_REVIEWING;
+        } else if (status == DEL_WAIT_REVIEW) {
+            return DEL_REVIEWING;
         }
         return status;
     }

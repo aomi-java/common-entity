@@ -63,6 +63,11 @@ public class Review<T> implements java.io.Serializable {
     private List<ReviewHistory> histories;
 
     /**
+     * 资源状态
+     */
+    private ResourceReviewStatus resourceReviewStatus;
+
+    /**
      * 变更描述
      */
     private String describe;
