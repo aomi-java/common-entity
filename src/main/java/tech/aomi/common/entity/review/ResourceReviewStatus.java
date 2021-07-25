@@ -119,4 +119,15 @@ public enum ResourceReviewStatus {
         return status;
     }
 
+    public boolean isAdd() {
+        return this.name().startsWith("ADD");
+    }
+
+    public boolean isEdit() {
+        return this.name().startsWith("EDIT");
+    }
+
+    public boolean isDel() {
+        return this.name().startsWith("DEL");
+    }
 }
