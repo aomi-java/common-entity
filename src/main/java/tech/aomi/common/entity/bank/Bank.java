@@ -1138,7 +1138,12 @@ public enum Bank {
      * 尧都农村商业银行
      * 临汾市尧都区农村信用合作联社
      */
-    YDRCB("尧都农村商业银行")
+    YDRCB("尧都农村商业银行"),
+
+    /**
+     * 山西省农村信用社
+     */
+    SHANXIRCB("山西省农村信用社")
 
 
     //
@@ -1577,6 +1582,7 @@ public enum Bank {
             put("64540000", new HeadOffice(JJCCB, "313424072004"));
 
 
+            put("14551600", new HeadOffice(SHANXIRCB, "402161002352"));
 
         }
     };
