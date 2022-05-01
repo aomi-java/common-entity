@@ -3,11 +3,12 @@ plugins {
 }
 
 group 'tech.aomi.common'
-version '1.0.3-Alpha.13'
+version '1.0.3_13-SNAPSHOT'
 
 apply from: 'https://onegit.com/enterprise/public/raw/master/libraries.gradle'
 apply from: 'https://onegit.com/enterprise/public/raw/master/java.gradle'
-apply from: 'https://onegit.com/enterprise/public/raw/master/publishing-with-source.gradle'
+//apply from: 'https://onegit.com/enterprise/public/raw/master/publishing-with-source.gradle'
+apply from: 'https://onegit.com/enterprise/public/raw/master/publish-center.gradle'
 
 
 repositories {

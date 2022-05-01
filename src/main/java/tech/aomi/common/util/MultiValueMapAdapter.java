@@ -10,7 +10,6 @@ import java.util.*;
  * @param <V> the value element type
  * @author Arjen Poutsma
  * @author Juergen Hoeller
- * @see CollectionUtils#toMultiValueMap
  * @see LinkedMultiValueMap
  * @since 5.3
  */
@@ -21,7 +20,6 @@ public class MultiValueMapAdapter<K, V> implements MultiValueMap<K, V>, Serializ
     /**
      * Default load factor for {@link HashMap}/{@link LinkedHashMap} variants.
      *
-     * @see #newHashMap(int)
      * @see #newLinkedHashMap(int)
      */
     public static final float DEFAULT_LOAD_FACTOR = 0.75f;

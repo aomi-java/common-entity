@@ -90,6 +90,7 @@ public enum ResourceReviewStatus {
      *
      * @param status 当前状态
      * @param result 审核结果
+     * @return 资源审核状态
      */
     public static ResourceReviewStatus getResultStatus(ResourceReviewStatus status, ReviewResult result) {
         if (ADD_REVIEW_STATUS.contains(status)) {
