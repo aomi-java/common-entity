@@ -2,19 +2,14 @@ package tech.aomi.common.entity.rule;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.Accessors;
 
 import java.util.List;
 
 @Getter
 @Setter
-@Accessors
 public class Condition implements java.io.Serializable {
 
     private static final long serialVersionUID = 841377957017351637L;
-
-    @Deprecated
-    private String key;
 
     /**
      * 多key
