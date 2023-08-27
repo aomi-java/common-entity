@@ -7,7 +7,7 @@ ext.spring_boot_version = "3.1.2"
 
 
 group 'tech.aomi.common'
-version '1.0.3_13-SNAPSHOT'
+version '1.0.4_0-SNAPSHOT'
 
 apply from: 'https://onegit.com/enterprise/public/raw/master/libraries.gradle'
 apply from: 'https://onegit.com/enterprise/public/raw/master/spring-libraries.gradle'
