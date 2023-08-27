@@ -1,21 +1,35 @@
 plugins {
-    id "io.franzbecker.gradle-lombok" version "2.2"
+    id 'java'
+    id "io.freefair.lombok" version "8.1.0"
+    id 'io.spring.dependency-management' version '1.1.2'
 }
+ext.spring_boot_version = "3.1.2"
+
 
 group 'tech.aomi.common'
 version '1.0.3_13-SNAPSHOT'
 
 apply from: 'https://onegit.com/enterprise/public/raw/master/libraries.gradle'
-apply from: 'https://onegit.com/enterprise/public/raw/master/java.gradle'
-//apply from: 'https://onegit.com/enterprise/public/raw/master/publishing-with-source.gradle'
+apply from: 'https://onegit.com/enterprise/public/raw/master/spring-libraries.gradle'
 apply from: 'https://onegit.com/enterprise/public/raw/master/publish-center.gradle'
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_20
+}
 
 repositories {
-    maven { url "${project.'repo'}" }
     mavenCentral()
+    maven {
+        url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${spring_boot_version}"
+    }
 }
 
 dependencies {
-    compileOnly lib.spring_data_mongodb
+    implementation spring_boot.data_mongodb
 }
