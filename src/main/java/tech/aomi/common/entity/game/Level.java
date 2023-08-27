@@ -27,6 +27,11 @@ public class Level implements java.io.Serializable, LabelEntity {
     private Long experienceRequired;
 
     /**
+     * 等级描述
+     */
+    private String describe;
+
+    /**
      * 标签
      * 用于记录一些额外的信息
      */
