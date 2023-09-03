@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.Instant;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 /**
  * 任务信息表
@@ -31,14 +28,15 @@ public class Task<TaskType> implements java.io.Serializable {
      */
     private String describe;
 
+
     /**
-     * 任务要求
-     * 分享 SHARE - 40 个
+     * 任务阶段步骤
      */
-    private Map<String, Object> requirements;
+    private List<TaskStage> stages;
 
     /**
      * 奖励信息
+     * 全部完成以后的奖励
      */
     private List<Reward> rewards;
 
@@ -78,21 +76,4 @@ public class Task<TaskType> implements java.io.Serializable {
      */
     private Instant updateAt;
 
-
-    public Object getRequirement(String key) {
-        return Optional.ofNullable(getRequirements()).map(requirements -> requirements.get(key)).orElse(null);
-    }
-
-    public void addRequirement(String key, Object value) {
-        if (null == getRequirements()) {
-            setRequirements(new HashMap<>());
-        }
-        getRequirements().put(key, value);
-    }
-
-    public Object removeLabel(String key) {
-        if (null == getRequirements())
-            return null;
-        return getRequirements().remove(key);
-    }
 }

@@ -2,6 +2,7 @@ package tech.aomi.common.entity;
 
 import tech.aomi.common.entity.common.History;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,10 +17,10 @@ public interface HistoryEntity extends java.io.Serializable {
     void setHistories(List<History> histories);
 
     default void addHistory(String describe) {
-        addHistory(new Date(), describe);
+        addHistory(Instant.now(), describe);
     }
 
-    default void addHistory(Date actionAt, String describe) {
+    default void addHistory(Instant actionAt, String describe) {
         addHistory(new History(actionAt, describe));
     }
 

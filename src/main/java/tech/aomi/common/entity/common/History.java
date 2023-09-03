@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.Instant;
 
 /**
  * @author Sean createAt 2018/12/10
@@ -24,19 +24,19 @@ public class History implements Serializable {
     /**
      * 操作时间
      */
-    private Date actionAt;
+    private Instant actionAt;
 
     private String describe = "";
 
     public History(String describe) {
-        this("DEFAULT", new Date(), describe);
+        this("DEFAULT", Instant.now(), describe);
     }
 
     public History(String actionType, String describe) {
-        this(actionType, new Date(), describe);
+        this(actionType, Instant.now(), describe);
     }
 
-    public History(Date actionAt, String describe) {
+    public History(Instant actionAt, String describe) {
         this("DEFAULT", actionAt, describe);
     }
 
