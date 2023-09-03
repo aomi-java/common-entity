@@ -35,7 +35,7 @@ public class TaskStage implements java.io.Serializable {
      * 奖励信息
      * 当前阶段完成奖励
      */
-    private List<Reward> rewards;
+    private List<TaskReward> rewards;
 
 
     public Object getRequirement(String key) {

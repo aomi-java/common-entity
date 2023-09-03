@@ -1,6 +1,6 @@
 package tech.aomi.common.entity.game;
 
-public enum Status {
+public enum TaskStatus {
     /**
      * 任务已创建但尚未被玩家接受。
      */

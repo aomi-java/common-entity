@@ -11,7 +11,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class Reward implements LabelEntity {
+public class TaskReward implements LabelEntity {
 
 
     /**

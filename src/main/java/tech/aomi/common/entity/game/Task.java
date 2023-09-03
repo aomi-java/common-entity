@@ -38,7 +38,7 @@ public class Task<TaskType> implements java.io.Serializable {
      * 奖励信息
      * 全部完成以后的奖励
      */
-    private List<Reward> rewards;
+    private List<TaskReward> rewards;
 
     /**
      * 任务类型

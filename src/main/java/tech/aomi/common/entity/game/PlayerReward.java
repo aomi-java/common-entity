@@ -33,7 +33,7 @@ public class PlayerReward<S> implements java.io.Serializable {
     /**
      * 奖励信息
      */
-    private List<Reward> rewards;
+    private List<TaskReward> rewards;
 
     /**
      * 如果是任务，则记录任务id

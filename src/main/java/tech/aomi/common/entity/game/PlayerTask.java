@@ -38,7 +38,7 @@ public class PlayerTask<P extends Player, T> implements java.io.Serializable {
     /**
      * 任务状态
      */
-    private Status status;
+    private TaskStatus status;
 
     /**
      * 进度
