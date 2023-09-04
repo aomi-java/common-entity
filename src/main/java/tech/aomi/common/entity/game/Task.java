@@ -19,6 +19,12 @@ public class Task<TaskType> implements java.io.Serializable {
     private String id;
 
     /**
+     * 任务代码
+     * 唯一不可变更
+     */
+    private String code;
+
+    /**
      * 任务名称
      */
     private String name;
@@ -49,6 +55,11 @@ public class Task<TaskType> implements java.io.Serializable {
      * 任务触发类型
      */
     private TriggerType triggerType;
+
+    /**
+     * 任务是否启用
+     */
+    private Boolean enabled;
 
     /**
      * 任务开始时间，
