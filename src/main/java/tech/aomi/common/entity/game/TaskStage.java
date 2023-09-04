@@ -39,11 +39,11 @@ public class TaskStage implements java.io.Serializable {
     private List<TaskReward> rewards;
 
 
-    public Object getRequirement(String key) {
+    public Number getRequirement(String key) {
         return Optional.ofNullable(getRequirements()).map(requirements -> requirements.get(key)).orElse(null);
     }
 
-    public void addRequirement(String key, Object value) {
+    public void addRequirement(String key, Number value) {
         if (null == getRequirements()) {
             setRequirements(new HashMap<>());
         }
