@@ -3,6 +3,7 @@ package tech.aomi.common.entity.game;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.util.List;
 
@@ -74,9 +75,8 @@ public class Task<TaskType> implements java.io.Serializable {
 
     /**
      * 任务有效期
-     * 单位业务系统自行规定
      */
-    private Long validityDuration;
+    private Duration validityDuration;
 
     /**
      * 任务创建时间

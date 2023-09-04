@@ -5,6 +5,7 @@ import lombok.Setter;
 import tech.aomi.common.entity.StringIdAbstractEntity;
 
 import java.math.BigDecimal;
+import java.time.Duration;
 import java.time.Instant;
 
 @Getter
@@ -49,8 +50,7 @@ public class Coupon extends StringIdAbstractEntity {
      * 领取时用来计算有效期
      * 0 或者 null 为不限制
      */
-    private Long validityDuration;
-
+    private Duration validityDuration;
 
     private Instant createAt;
 
