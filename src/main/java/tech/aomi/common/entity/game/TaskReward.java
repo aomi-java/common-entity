@@ -23,7 +23,7 @@ public class TaskReward implements LabelEntity {
     /**
      * 奖励数量
      */
-    private Long amount;
+    private Number amount;
 
     /**
      * 如果是物品可以填写物品ID

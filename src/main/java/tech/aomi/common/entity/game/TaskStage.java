@@ -27,9 +27,10 @@ public class TaskStage implements java.io.Serializable {
 
     /**
      * 当前阶段任务要求
+     * 任务指标
      * 分享 SHARE - 40 个
      */
-    private Map<String, Object> requirements;
+    private Map<String, Number> requirements;
 
     /**
      * 奖励信息
