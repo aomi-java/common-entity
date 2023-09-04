@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.time.Instant;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -47,10 +48,12 @@ public class PlayerTask<P extends Player, T> implements java.io.Serializable {
 
     /**
      * 需求进度
+     * 对应任务表中的
+     * stages
      * 如
      * A 小怪 已经击杀50只
      */
-    private Map<String, Object> requirementsProgress;
+    private List<Map<String, Object>> requirementsProgress;
 
     /**
      * 开始时间
