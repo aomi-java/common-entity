@@ -50,7 +50,7 @@ public class TaskStage implements java.io.Serializable {
         getRequirements().put(key, value);
     }
 
-    public Object removeRequirement(String key) {
+    public Number removeRequirement(String key) {
         if (null == getRequirements())
             return null;
         return getRequirements().remove(key);
