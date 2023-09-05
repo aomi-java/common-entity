@@ -54,7 +54,7 @@ public class PlayerTask<P extends Player, T> implements java.io.Serializable {
      * A 小怪 已经击杀50只
      * 改数据和 stages 数组一一对应
      */
-    private List<Map<String, Number>> requirementsProgress;
+    private List<List<TaskRequirement>> requirementsProgress;
 
     /**
      * 开始时间
