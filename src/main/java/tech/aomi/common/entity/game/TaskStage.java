@@ -3,10 +3,11 @@ package tech.aomi.common.entity.game;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * 任务阶段
@@ -30,7 +31,7 @@ public class TaskStage implements java.io.Serializable {
      * 任务指标
      * 分享 SHARE - 40 个
      */
-    private Map<String, Number> requirements;
+    private List<TaskRequirement> requirements;
 
     /**
      * 奖励信息
@@ -40,20 +41,29 @@ public class TaskStage implements java.io.Serializable {
 
 
     public Number getRequirement(String key) {
-        return Optional.ofNullable(getRequirements()).map(requirements -> requirements.get(key)).orElse(null);
+        if (null == requirements) {
+            return null;
+        }
+        return requirements.stream()
+                .filter(item -> item.getKey().equals(key)).findFirst()
+                .map(TaskRequirement::getValue).orElse(null);
+
     }
 
     public void addRequirement(String key, Number value) {
         if (null == getRequirements()) {
-            setRequirements(new HashMap<>());
+            setRequirements(new ArrayList<>());
         }
-        getRequirements().put(key, value);
+        getRequirements().add(new TaskRequirement(key, value));
     }
 
-    public Number removeRequirement(String key) {
+    public void removeRequirement(String key) {
         if (null == getRequirements())
-            return null;
-        return getRequirements().remove(key);
+            return;
+
+        this.requirements = this.requirements.stream()
+                .filter(item -> !(item.getKey().equals(key)))
+                .collect(Collectors.toList());
     }
 
 }
