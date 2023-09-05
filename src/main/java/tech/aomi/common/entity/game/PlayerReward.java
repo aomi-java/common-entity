@@ -8,6 +8,8 @@ import java.util.List;
 
 /**
  * 玩家奖励信息表
+ * <p>
+ * 需要对 playerId playerTaskId stage 做联合唯一索引
  *
  * @param <S> 来源，例如：击杀怪物、任务、平台
  */
@@ -35,10 +37,17 @@ public class PlayerReward<S> implements java.io.Serializable {
      */
     private List<TaskReward> rewards;
 
+    private String playerTaskId;
+
     /**
      * 如果是任务，则记录任务id
      */
     private String taskId;
+
+    /**
+     * 阶段
+     */
+    private Integer stage;
 
     /**
      * 创建时间
