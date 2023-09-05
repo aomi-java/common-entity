@@ -13,7 +13,7 @@ import java.util.Map;
  */
 @Getter
 @Setter
-public class TaskProgress<PlayerTask> implements java.io.Serializable, LabelEntity {
+public class TaskDetail<PlayerTask> implements java.io.Serializable, LabelEntity {
 
     private String id;
 
