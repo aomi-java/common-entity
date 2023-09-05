@@ -5,8 +5,6 @@ import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.time.Instant;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 玩家任务信息表
@@ -46,15 +44,16 @@ public class PlayerTask<P extends Player, T> implements java.io.Serializable {
      */
     private Integer progress;
 
-    /**
-     * 需求进度
-     * 对应任务表中的
-     * stages
-     * 如
-     * A 小怪 已经击杀50只
-     * 改数据和 stages 数组一一对应
-     */
-    private List<List<TaskRequirement>> requirementsProgress;
+//    /**
+//     * 需求进度
+//     * 对应任务表中的
+//     * stages
+//     * 如
+//     * A 小怪 已经击杀50只
+//     * 改数据和 stages 数组一一对应
+//     */
+//    具体进度根据明细表统计，这里有并发问题
+//    private List<List<TaskRequirement>> requirementsProgress;
 
     /**
      * 开始时间
