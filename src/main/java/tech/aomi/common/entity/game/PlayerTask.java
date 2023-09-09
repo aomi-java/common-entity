@@ -30,6 +30,11 @@ public class PlayerTask<P extends Player, T> implements java.io.Serializable {
     private String taskId;
 
     /**
+     * 任务代码
+     */
+    private String taskCode;
+
+    /**
      * 任务信息
      */
     @DBRef
@@ -45,7 +50,7 @@ public class PlayerTask<P extends Player, T> implements java.io.Serializable {
      */
     private Integer progress;
 
-//    /**
+    //    /**
 //     * 需求进度
 //     * 对应任务表中的
 //     * stages
