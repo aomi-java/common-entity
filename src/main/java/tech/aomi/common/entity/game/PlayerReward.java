@@ -3,9 +3,11 @@ package tech.aomi.common.entity.game;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import tech.aomi.common.entity.LabelEntity;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 玩家奖励信息表
@@ -18,7 +20,7 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class PlayerReward<S, UT, TT> implements java.io.Serializable {
+public class PlayerReward<S, UT, TT> implements java.io.Serializable, LabelEntity {
 
     /**
      * 记录ID
@@ -69,6 +71,11 @@ public class PlayerReward<S, UT, TT> implements java.io.Serializable {
      * 任务阶段
      */
     private Integer stage;
+
+    /**
+     * 标签信息
+     */
+    private Map<String, Object> labels;
 
     /**
      * 创建时间
