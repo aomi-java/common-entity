@@ -58,6 +58,11 @@ public class PlayerReward<S, UT, TT> implements java.io.Serializable, LabelEntit
     private String taskId;
 
     /**
+     * 任务代码
+     */
+    private String taskCode;
+
+    /**
      * 任务名称
      */
     private String taskName;
