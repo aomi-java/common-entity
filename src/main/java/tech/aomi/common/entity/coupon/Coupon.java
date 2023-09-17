@@ -18,6 +18,11 @@ public class Coupon extends StringIdAbstractEntity {
     private String code; // 优惠码
 
     /**
+     * 优惠券标题
+     */
+    private String title;
+
+    /**
      * 优惠券描述
      */
     private String description; // 优惠券描述
