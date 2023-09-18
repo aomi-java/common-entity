@@ -82,7 +82,7 @@ public class Review<T> implements java.io.Serializable {
     /**
      * 最后审核时间
      */
-    public Instant lastReviewAt() {
+    public Instant getLastReviewAt() {
         // 第一个是新增的历史
         if (null == histories || histories.size() <= 1) {
             return null;
