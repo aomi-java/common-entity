@@ -3,7 +3,8 @@ package tech.aomi.common.entity.review;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.io.Serial;
+import java.time.Instant;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ import java.util.List;
 @Setter
 public class Review<T> implements java.io.Serializable {
 
+    @Serial
     private static final long serialVersionUID = -4057791930223229701L;
 
     private String id;
@@ -75,5 +77,17 @@ public class Review<T> implements java.io.Serializable {
     /**
      * 创建时间
      */
-    private Date createAt;
+    private Instant createAt;
+
+    /**
+     * 最后审核时间
+     */
+    public Instant lastReviewAt() {
+        // 第一个是新增的历史
+        if (null == histories || histories.size() <= 1) {
+            return null;
+        }
+        var history = histories.get(1);
+        return history.getReviewAt();
+    }
 }

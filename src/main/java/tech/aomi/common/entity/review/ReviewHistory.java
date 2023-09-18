@@ -3,6 +3,7 @@ package tech.aomi.common.entity.review;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.util.Date;
 
 /**
@@ -32,5 +33,5 @@ public class ReviewHistory implements java.io.Serializable {
     /**
      * 审核日期
      */
-    private Date reviewAt;
+    private Instant reviewAt;
 }
