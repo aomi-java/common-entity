@@ -7,7 +7,7 @@ plugins {
 }
 
 group 'tech.aomi.common'
-version '1.0.4_21-SNAPSHOT'
+version '1.0.4_22-SNAPSHOT'
 
 apply from: 'https://onegit.com/enterprise/public/raw/master/spring-libraries.gradle'
 

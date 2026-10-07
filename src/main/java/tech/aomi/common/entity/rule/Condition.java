@@ -3,12 +3,15 @@ package tech.aomi.common.entity.rule;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serial;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @Setter
 public class Condition implements java.io.Serializable {
 
+    @Serial
     private static final long serialVersionUID = 841377957017351637L;
 
     /**
@@ -22,12 +25,13 @@ public class Condition implements java.io.Serializable {
     private Object value;
 
     /**
-     * gt 大于
-     * ge 大于等于
-     * lt 小于
-     * le 小于登陆
-     * eq 等于
-     * 比较操作符
+     * 操作符扩展参数, 由具体 operator 定义语义.
+     * 例如 mod 操作符: params.remainder = 期望余数(缺省0)
+     */
+    private Map<String, Object> params;
+
+    /**
+     * 比较操作符, 见 {@link Operator}
      */
     private String operator;
 
