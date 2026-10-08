@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
+import java.io.Serial;
 import java.util.Date;
 import java.util.Set;
 
@@ -16,6 +17,7 @@ import java.util.Set;
 @Setter
 public class Operator<R extends Role> implements java.io.Serializable {
 
+    @Serial
     private static final long serialVersionUID = -6663136478071053644L;
 
     private String id;
@@ -65,4 +67,9 @@ public class Operator<R extends Role> implements java.io.Serializable {
      * 单点登录系统中的用户ID
      */
     private String userId;
+
+    /**
+     * 是否启用
+     */
+    private Boolean enabled;
 }
