@@ -72,4 +72,9 @@ public class Operator<R extends Role> implements java.io.Serializable {
      * 是否启用
      */
     private Boolean enabled;
+
+    /**
+     * 是否已删除(逻辑删除)
+     */
+    private Boolean deleted;
 }
